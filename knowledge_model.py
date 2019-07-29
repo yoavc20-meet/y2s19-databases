@@ -14,4 +14,17 @@ class Knowledge(Base):
 	# topic of the article. The last column will be
 	# an integer, representing your rating of the article.
 
-	pass
+	pass 
+	__tablename__ = 'articles'
+	num_article = Column(Integer, primary_key=True)
+	topic= Column(String)
+	link = Column(String)
+	rating= Column(Integer)
+
+
+	def __repr__(self):
+		return ("if you want to read about {}\n"
+				" here is the link: {}\n"
+				"I gave it a rating of: {}\n").format(self.topic,self.link,self.rating,)
+
+# friends = Knowledge(num_article= 1 ,topic- "3 things you didn't know anout the show friends",rating = 8)
